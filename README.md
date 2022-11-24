@@ -1,108 +1,79 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Chinook Database
 
-Welcome USER_NAME,
+Chinook is a sample database available for SQL Server, Oracle, MySQL, etc. It can be created by running a single SQL script. Chinook database is an alternative to the Northwind database, being ideal for demos and testing ORM tools targeting single and multiple database servers.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### Supported Database Servers
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* MySQL
+* SQL Server
+* SQL Server Compact
+* SQLite
+* PostgreSQL
+* Oracle
+* DB2
 
-## Gitpod Reminders
+### Data Model
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The Chinook data model represents a digital media store, including tables for artists, albums, media tracks, invoices and customers.
 
-`python3 -m http.server`
+### Sample Data
 
-A blue button should appear to click: _Make Public_,
+Media related data was created using real data from an iTunes Library. It is possible for you to use your own iTunes Library to generate the SQL scripts, see instructions below.
+Customer and employee information was manually created using fictitious names, addresses that can be located on Google maps, and other well formatted data (phone, fax, email, etc.).
+Sales information is auto generated using random data for a four year period.
 
-Another blue button should appear to click: _Open Browser_.
+### Why the name Chinook?
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The name of this sample database was based on the Northwind database. Chinooks are winds in the interior West of North America, where the Canadian Prairies and Great Plains meet various mountain ranges. Chinooks are most prevalent over southern Alberta in Canada. Chinook is a good name choice for a database that intents to be an alternative to Northwind.
 
-A blue button should appear to click: _Make Public_,
+### How do I Download and Create the Chinook Database?
 
-Another blue button should appear to click: _Open Browser_.
+Download the files from the [Downloads page](ChinookDatabase/DataSources). It is provided one or more SQL script file for each database vendor supported. You can run these SQL scripts with your preferred database tool.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+For SQL Server, Oracle, MySQL and SQLite, there are available batch files that will execute the respective SQL script(s). These batch files use the database server command tool (**mysql.exe** for MySQL, **sqlcmd.exe** for SQL Server, **sqlplus.exe** for Oracle, and **sqlite3.exe** for SQLite). It is recommended to open a Command Prompt window as Administrator in order to run these batch files.
 
-To log into the Heroku toolbelt CLI:
+For embedded databases, SQLite and SQL Server Compact, it is also provided the embedded database files in addition to the SQL script files.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Notes:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* MySQL
+  * Tested with MySQL Server 5.1.
+  * The **CreateMySql.bat** script uses localhost server with the following user/password: **root/p4ssw0rd**. Change this file to match your settings before running it.
+* Oracle
+  * Tested with Oracle Database 10g Express Edition (XE).
+  * The **CreateOracle.sql** creates a new user/password: **chinook/p4ssw0rd**. Change this script if you want a different user/password.
+* SQL Server
+  * Tested with SQL Server Express 2008.
+* SQL Server Compact
+  * Tested with SQL Server Compact 3.5 SP1.
+  * We included the compact databases (sdf files) using version 3.5.8080.0. If you prefer to create your own compact database, then you can use the .sqlce script with SQL Server Management Studio Express tool.
+* SQLite
+  * Tested with SQLite 3.7.3
 
-------
+### Development
 
-## Release History
+#### System Requirements
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* Visual Studio 2012
+* SQL Server 2008 Express
+* Oracle Database 11g Express Edition Release 2 (XE)
+* MySQL Community Server 5.5.28
+  * Choose all default settings when installing, but on the MySQL Server Instance installer make sure to select:
+    * Best Support For Multilingualism
+    * Include Bin Directory in Windows PATH
+* SQLite 3.7 Command Line
+* DB2 Express-C
+* PostgreSQL
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Building and Generating the SQL Scripts
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+* Open the solution file ChinookDatabase.sln in Visual Studio.
+* If you want to use the data from your own iTunes library, then replace the file **ChinookDatabase\DataSources\_Xml\Source\iTunes Music Library.xml** with your version.
+* In app.config, verify that the connection strings are matching any changes you made to username/password above. Also, the Oracle connection string uses the Express Edition, e.g. Data Source=xe. So, change it if you are using a different Oracle edition.
+* On the *Solution Explorer*, click on your *Solution* and then click on the *Transform All Templates* button at the Solution Explorer buttons bar.
+* Rebuild the solution.
+* Verify that your database servers are properly set:
+  * The batch file DataSources\CreateMySql.bat uses the root user with the password p4ssw0rd.
+  * The generated Oracle SQL script creates a new user chinook, with the password p4ssw0rd. You might want to change this to use a different user/password.
+* Create the database using the appropriate scripts.
+* Run the database tests in ChinookDatabase.Test to make sure your database was created properly.
