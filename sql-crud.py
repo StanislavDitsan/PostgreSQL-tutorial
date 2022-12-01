@@ -79,6 +79,14 @@ tim_berners_lee = Programmer(
     famous_for="World Wide Web"
 )
 
+barbara_liskov = Programmer(
+    first_name="Barbara",
+    last_name="Liskov",
+    gender="F",
+    nationality="American",
+    famous_for="CLU and Argus"
+)
+
 
 # add each instance of our Programmers to our session
 session.add(ada_lovelace)
@@ -87,7 +95,12 @@ session.add(grace_hopper)
 session.add(margaret_hamilton)
 session.add(bill_gates)
 session.add(tim_berners_lee)
+session.add(barbara_liskov)
 
+
+# updating a single record
+# programmer = session.query(Programmer).filter_by(id=7).first()
+# programmer.famous_for = "World President"
 
 # commit our session to the database
 session.commit()
