@@ -103,7 +103,20 @@ session.add(barbara_liskov)
 # programmer.famous_for = "World President"
 
 # commit our session to the database
-session.commit()
+# session.commit()
+
+
+# updating multiple records
+
+people = session.query(Programmer)
+for person in people:
+    if person.gender == "F":
+        person.gender = "Female"
+    elif person.gender == "M":
+        person.gender = "Male"
+    else:
+        print("Gender not defined")
+    session.commit()    
 
 
 # query the database to find all Programmers
